@@ -129,49 +129,52 @@
 
   <!-- ===================== SETTINGS ===================== -->
   <section id="settings" class="screen">
-    <div class="settings-scroll">
-      <div class="set-title">⚙️ Practice Setup</div>
+    <div class="settings-panel">
+      <div class="settings-scroll">
+        <div class="set-title">⚙️ Practice Setup</div>
 
-      <div class="set-block">
-        <h3>🧮 What to practice</h3>
-        <div class="chips" id="opChips">
-          <button class="chip" data-op="mul">× Times</button>
-          <button class="chip" data-op="div">÷ Divide</button>
-          <button class="chip" data-op="add">+ Add</button>
-          <button class="chip" data-op="sub">− Subtract</button>
+        <div class="set-block">
+          <h3>🧮 What to practice</h3>
+          <div class="chips" id="opChips">
+            <button class="chip" data-op="mul">× Times</button>
+            <button class="chip" data-op="div">÷ Divide</button>
+            <button class="chip" data-op="add">+ Add</button>
+            <button class="chip" data-op="sub">− Subtract</button>
+          </div>
         </div>
+
+        <div class="set-block">
+          <h3>🔢 Number families</h3>
+          <div class="presets" id="factPresets">
+            <button class="preset" data-preset="1,2,5,10">⭐ 1,2,5,10</button>
+            <button class="preset" data-preset="2,3,4,5">Easy 2–5</button>
+            <button class="preset" data-preset="6,7,8,9">Tricky 6–9</button>
+            <button class="preset" data-preset="1,2,3,4,5,6,7,8,9,10,11,12">All 1–12</button>
+          </div>
+          <div class="chips" id="factChips"></div>
+        </div>
+
+        <div class="set-block">
+          <h3>📈 Difficulty</h3>
+          <div class="seg" id="diffSeg">
+            <button class="chip" data-max="5">Easy<br><small style="font-weight:400;opacity:.8">up to 5</small></button>
+            <button class="chip" data-max="10">Medium<br><small style="font-weight:400;opacity:.8">up to 10</small></button>
+            <button class="chip" data-max="12">Hard<br><small style="font-weight:400;opacity:.8">up to 12</small></button>
+          </div>
+        </div>
+
+        <div class="set-block">
+          <h3>⏱️ Timer</h3>
+          <div class="seg" id="timeSeg">
+            <button class="chip" data-time="30">30s</button>
+            <button class="chip" data-time="60">60s</button>
+            <button class="chip" data-time="90">90s</button>
+          </div>
+        </div>
+
+        <div class="warn-msg" id="setWarn"></div>
       </div>
 
-      <div class="set-block">
-        <h3>🔢 Number families</h3>
-        <div class="presets" id="factPresets">
-          <button class="preset" data-preset="1,2,5,10">⭐ 1,2,5,10</button>
-          <button class="preset" data-preset="2,3,4,5">Easy 2–5</button>
-          <button class="preset" data-preset="6,7,8,9">Tricky 6–9</button>
-          <button class="preset" data-preset="1,2,3,4,5,6,7,8,9,10,11,12">All 1–12</button>
-        </div>
-        <div class="chips" id="factChips"></div>
-      </div>
-
-      <div class="set-block">
-        <h3>📈 Difficulty</h3>
-        <div class="seg" id="diffSeg">
-          <button class="chip" data-max="5">Easy<br><small style="font-weight:400;opacity:.8">up to 5</small></button>
-          <button class="chip" data-max="10">Medium<br><small style="font-weight:400;opacity:.8">up to 10</small></button>
-          <button class="chip" data-max="12">Hard<br><small style="font-weight:400;opacity:.8">up to 12</small></button>
-        </div>
-      </div>
-
-      <div class="set-block">
-        <h3>⏱️ Timer</h3>
-        <div class="seg" id="timeSeg">
-          <button class="chip" data-time="30">30s</button>
-          <button class="chip" data-time="60">60s</button>
-          <button class="chip" data-time="90">90s</button>
-        </div>
-      </div>
-
-      <div class="warn-msg" id="setWarn"></div>
       <div class="set-foot">
         <button class="btn btn-ghost" id="setCancel">Cancel</button>
         <button class="btn btn-lime" id="setSave">Save ✓</button>

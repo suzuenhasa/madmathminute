@@ -385,3 +385,64 @@
     transform: scale(0.85);
   }
 }
+
+/* ---------- short / landscape heights: keep the game from colliding ---------- */
+@media (max-height: 600px) {
+  .play-center {
+    margin-top: 22px;
+    gap: 2px;
+  }
+  .hud {
+    padding: 8px 12px;
+  }
+  .hud-stat {
+    padding: 5px 12px;
+    min-width: 76px;
+  }
+  .timer,
+  .timer svg {
+    width: 64px;
+    height: 64px;
+  }
+  .iconbtn {
+    width: 40px;
+    height: 40px;
+  }
+  .answer-box {
+    min-height: clamp(44px, 12vh, 64px);
+    margin-top: 4px;
+  }
+  .key {
+    height: clamp(42px, 10.5vh, 60px);
+  }
+}
+
+/* ---------- short landscape (e.g. a phone turned sideways): problem on the
+   left, keypad on the right, so the keypad never runs off the bottom ---------- */
+@media (orientation: landscape) and (max-height: 560px) {
+  #game.screen.active {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    padding: 76px 16px 10px;
+  }
+  .hud {
+    padding: 6px 12px;
+  }
+  .play-center {
+    flex: 1 1 0;
+    max-width: 48%;
+    margin-top: 0;
+  }
+  .keypad {
+    flex: 0 1 340px;
+    max-width: 340px;
+    margin-top: 0;
+    padding-bottom: 0;
+    align-self: center;
+  }
+  .key {
+    height: clamp(36px, 16vh, 60px);
+  }
+}
