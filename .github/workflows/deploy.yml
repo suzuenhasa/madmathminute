@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+# Builds the Vite app and publishes it to GitHub Pages.
+#
+# This ONLY runs for the `main` branch (or a manual trigger), so any work you do
+# on other branches (e.g. `dev`) never touches the live site.
+#
+# ONE-TIME SETUP: before the first deploy, switch the repo's Pages source to
+# "GitHub Actions" under Settings -> Pages -> Build and deployment -> Source.
+# This workflow cannot change that setting itself; until it is flipped, the
+# deploy step fails and the live site stays on the old branch-based version.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment; don't cancel an in-progress run.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

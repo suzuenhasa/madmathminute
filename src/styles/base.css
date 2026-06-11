@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Fredoka', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--ink);
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* ---------- atmospheric background ---------- */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 800px at 15% -10%, #3a1568 0%, transparent 55%),
+    radial-gradient(1000px 700px at 110% 10%, #2a0e5c 0%, transparent 55%),
+    linear-gradient(160deg, var(--deep2) 0%, var(--deep) 55%, var(--ink) 100%);
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+.b1 {
+  width: 46vmax;
+  height: 46vmax;
+  left: -12vmax;
+  top: -10vmax;
+  background: var(--pink);
+  animation: drift1 22s ease-in-out infinite;
+}
+.b2 {
+  width: 40vmax;
+  height: 40vmax;
+  right: -12vmax;
+  top: 8vmax;
+  background: var(--cyan);
+  opacity: 0.4;
+  animation: drift2 26s ease-in-out infinite;
+}
+.b3 {
+  width: 38vmax;
+  height: 38vmax;
+  left: 20vmax;
+  bottom: -16vmax;
+  background: var(--purple);
+  animation: drift3 30s ease-in-out infinite;
+}
+@keyframes drift1 {
+  50% {
+    transform: translate(6vmax, 5vmax) scale(1.1);
+  }
+}
+@keyframes drift2 {
+  50% {
+    transform: translate(-5vmax, 7vmax) scale(1.08);
+  }
+}
+@keyframes drift3 {
+  50% {
+    transform: translate(4vmax, -6vmax) scale(1.12);
+  }
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1.4px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(120% 120% at 50% 30%, #000 40%, transparent 85%);
+}
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.8;
+  animation: tw 3s ease-in-out infinite;
+}
+@keyframes tw {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
+}
+
+/* ---------- app shell ---------- */
+#app {
+  position: relative;
+  z-index: 2;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: env(safe-area-inset-top) 14px env(safe-area-inset-bottom);
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 14px;
+}
+.screen.active {
+  display: flex;
+  animation: pop 0.35s cubic-bezier(0.2, 1.3, 0.5, 1);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#fx {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+@media (max-height: 560px) {
+  .play-center {
+    margin-top: 30px;
+  }
+  .mascot {
+    display: none;
+  }
+}

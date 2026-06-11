@@ -1,0 +1,91 @@
+.logo-wrap {
+  text-align: center;
+  margin-bottom: 6px;
+}
+.mascot {
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.4));
+  animation: float 3.4s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+h1.logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: clamp(2.4rem, 9vw, 4.4rem);
+  line-height: 0.95;
+  margin: 6px 0 0;
+  background: linear-gradient(180deg, #fff, var(--yellow) 60%, var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 0 rgba(155, 92, 255, 0.25);
+  letter-spacing: 1px;
+}
+.logo .sub {
+  display: block;
+  font-family: 'Bungee', sans-serif;
+  font-size: clamp(1rem, 4.4vw, 1.8rem);
+  background: linear-gradient(90deg, var(--cyan), var(--lime));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 10px 0 22px;
+  text-align: center;
+}
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+}
+.row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+.row .btn {
+  flex: 1;
+}
+.best-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  backdrop-filter: blur(8px);
+  font-size: 1rem;
+}
+.best-tag b {
+  color: var(--yellow);
+  font-family: 'Bungee', sans-serif;
+  font-weight: 400;
+}
+.practice-chip {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+  max-width: 330px;
+  line-height: 1.5;
+}
+.practice-chip span {
+  color: var(--cyan);
+  font-weight: 600;
+}

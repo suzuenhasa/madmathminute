@@ -1,0 +1,16 @@
+:root {
+  --pink: #ff2e93;
+  --magenta: #ff5cc8;
+  --cyan: #2ee6ff;
+  --lime: #9bff5b;
+  --yellow: #ffd23f;
+  --purple: #9b5cff;
+  --deep: #1a0b3b;
+  --deep2: #2b1055;
+  --ink: #0d0524;
+  --panel: rgba(40, 18, 82, 0.55);
+  --panel-edge: rgba(150, 110, 255, 0.32);
+  --text: #f4ecff;
+  --muted: #b9a8e6;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}

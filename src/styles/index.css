@@ -1,0 +1,9 @@
+/* Order matters: variables first, then base, then per-area styles. */
+@import './variables.css';
+@import './base.css';
+@import './buttons.css';
+@import './home.css';
+@import './game.css';
+@import './results.css';
+@import './settings.css';
+@import './modal.css';
