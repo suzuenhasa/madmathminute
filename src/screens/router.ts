@@ -2,7 +2,7 @@ import type { ScreenName } from '../types';
 import { state } from '../state';
 import { $ } from '../dom';
 
-const SCREEN_IDS: ScreenName[] = ['home', 'game', 'results', 'settings'];
+const SCREEN_IDS: ScreenName[] = ['home', 'game', 'results', 'settings', 'tutorial'];
 
 /** Show one screen and hide the rest. */
 export function setScreen(name: ScreenName): void {

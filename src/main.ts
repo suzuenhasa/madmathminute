@@ -10,6 +10,7 @@ import { setScreen } from './screens/router';
 import { renderHome, syncSoundIcons } from './screens/home';
 import { startCountdown } from './screens/countdown';
 import { openHow, closeHow, howIsOpen } from './screens/how';
+import { initTutorial, openTutorial } from './screens/tutorial';
 import { openSettings, renderSettings } from './screens/settings';
 import { validateDraft } from './settings-logic';
 import { pressDigit, backspace, clearInput, commit } from './engine';
@@ -78,6 +79,8 @@ $('howModal').addEventListener('click', (e) => {
   // close when the dark backdrop (not the card) is clicked
   if (e.target === e.currentTarget) closeHow();
 });
+$('learnBtn').addEventListener('click', openTutorial);
+$('tutQuit').addEventListener('click', goHome);
 $('homeBtn').addEventListener('click', goHome);
 $('quitBtn').addEventListener('click', quitGame);
 $('soundBtn').addEventListener('click', toggleSound);
@@ -167,4 +170,5 @@ $('setSave').addEventListener('click', () => {
 
 initConfetti();
 initStars();
+initTutorial();
 renderHome();

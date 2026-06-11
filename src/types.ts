@@ -32,5 +32,5 @@ export interface Rank {
   stars: number;
 }
 
-/** The four full-screen views the app switches between. */
-export type ScreenName = 'home' | 'game' | 'results' | 'settings';
+/** The full-screen views the app switches between. */
+export type ScreenName = 'home' | 'game' | 'results' | 'settings' | 'tutorial';

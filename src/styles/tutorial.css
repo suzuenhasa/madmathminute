@@ -1,0 +1,151 @@
+.tut-wrap {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 24px;
+}
+.tut-title {
+  font-family: 'Bungee', sans-serif;
+  font-size: clamp(1.2rem, 5vw, 1.7rem);
+  color: #fff;
+  text-align: center;
+  margin-top: 8px;
+}
+.tut-problem {
+  font-family: 'Bungee', sans-serif;
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 1;
+  background: linear-gradient(90deg, var(--cyan), var(--lime));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tut-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.tut-chip {
+  font-family: 'Bungee', sans-serif;
+  font-size: 0.85rem;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--panel-edge);
+  color: var(--muted);
+  cursor: pointer;
+}
+.tut-chip:active {
+  transform: scale(0.95);
+}
+.tut-chip.on {
+  background: linear-gradient(135deg, var(--cyan), #3aa7ff);
+  color: #06243a;
+  border-color: transparent;
+}
+.tut-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+.tut-tab {
+  flex: 1 1 auto;
+  min-width: 84px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.tut-tab:active {
+  transform: scale(0.96);
+}
+.tut-tab.on {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.tut-stage {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 22px;
+  backdrop-filter: blur(8px);
+}
+.tut-stage svg {
+  width: 100%;
+  height: auto;
+}
+.tut-caption {
+  text-align: center;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 2.6em;
+  max-width: 420px;
+}
+.tut-controls {
+  min-height: 8px;
+}
+.tut-next {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+}
+
+/* standard algorithm grid */
+.tut-standard {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  justify-content: center;
+  align-items: center;
+  gap: 4px 2px;
+  font-family: 'Bungee', sans-serif;
+}
+.tut-cell {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text);
+  line-height: 1.1;
+  min-height: 1em;
+}
+.tut-cell.carry {
+  font-size: 1rem;
+  color: var(--cyan);
+}
+.tut-cell.op {
+  color: var(--muted);
+}
+.tut-cell.ans {
+  color: var(--yellow);
+}
+.tut-cell.hl {
+  color: var(--pink);
+}
+.tut-rule {
+  grid-column: 1 / -1;
+  height: 3px;
+  background: var(--panel-edge);
+  border-radius: 2px;
+  margin: 2px 0;
+}
+
+#tutQuit {
+  left: 16px;
+}

@@ -50,6 +50,7 @@
         <button class="btn btn-ghost" id="settingsBtn">⚙️ Practice</button>
         <button class="btn btn-cyan" id="howBtn">❔ How</button>
       </div>
+      <button class="btn btn-lime" id="learnBtn">📚 Learn</button>
     </div>
     <p class="practice-chip">You're practicing: <span id="practiceSummary"></span></p>
   </section>
@@ -179,6 +180,25 @@
         <button class="btn btn-ghost" id="setCancel">Cancel</button>
         <button class="btn btn-lime" id="setSave">Save ✓</button>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== TUTORIAL (Learn) ===================== -->
+  <section id="tutorial" class="screen">
+    <button class="iconbtn" id="tutQuit" aria-label="Back">✕</button>
+    <div class="tut-wrap">
+      <div class="tut-title">📚 Learn Multiplication</div>
+      <div class="tut-problem" id="tutProblem">13 × 4</div>
+      <div class="tut-presets" id="tutPresets"></div>
+      <div class="tut-methods" id="tutMethods">
+        <button class="tut-tab" data-method="groups">Groups</button>
+        <button class="tut-tab" data-method="array">Array</button>
+        <button class="tut-tab" data-method="area">Area model</button>
+        <button class="tut-tab" data-method="standard">Standard</button>
+      </div>
+      <div class="tut-stage" id="tutStage"></div>
+      <p class="tut-caption" id="tutCaption"></p>
+      <div class="tut-controls" id="tutControls"></div>
     </div>
   </section>
 
