@@ -3,7 +3,11 @@
   flex-direction: column;
   width: 100%;
   max-width: 440px;
-  max-height: 100%;
+  /* Fill the screen's height with flex-grow rather than a percentage height,
+     so the footer pins reliably in every browser (Safari/Firefox resolve
+     percentage heights on flex items differently than Chrome). */
+  flex: 1 1 auto;
+  min-height: 0;
 }
 .settings-scroll {
   flex: 1 1 auto;
@@ -114,10 +118,7 @@
   flex: 0 0 auto;
   display: flex;
   gap: 12px;
-  margin-top: 4px;
-  padding: 12px 4px max(6px, env(safe-area-inset-bottom));
-  background: var(--ink);
-  border-top: 1px solid var(--panel-edge);
+  padding: 12px 4px max(4px, env(safe-area-inset-bottom));
 }
 .set-foot .btn {
   flex: 1;
