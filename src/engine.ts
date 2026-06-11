@@ -107,6 +107,7 @@ export function commit(): void {
   } else {
     state.wrong++;
     state.streak = 0;
+    state.missed.push(state.current);
     sndWrong();
     vibrate([30, 40, 30]);
     box.classList.add('bad');
@@ -198,6 +199,21 @@ export function endGame(): void {
   $('rankName').textContent = rank.name;
   $('rankStars').textContent = '⭐'.repeat(rank.stars) + '☆'.repeat(5 - rank.stars);
   $('newBest').style.display = isBest && state.score > 0 ? '' : 'none';
+
+  // Offer a Learn lesson for a multiplication fact they missed — prefer a
+  // non-trivial one (skip ×0/×1) over the first miss.
+  const missedMuls = state.missed.filter((p) => p.op === 'mul');
+  const missedMul = missedMuls.find((p) => p.top >= 2 && p.bottom >= 2) ?? missedMuls[0];
+  state.learnFact = missedMul
+    ? { a: Math.max(missedMul.top, missedMul.bottom), b: Math.min(missedMul.top, missedMul.bottom) }
+    : null;
+  const learnBtn = $('resLearnBtn');
+  if (state.learnFact) {
+    learnBtn.textContent = `📚 Learn ${state.learnFact.a} × ${state.learnFact.b}`;
+    learnBtn.style.display = '';
+  } else {
+    learnBtn.style.display = 'none';
+  }
 
   setScreen('results');
   sndFinish();

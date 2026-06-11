@@ -16,6 +16,10 @@ export interface GameState {
   wrong: number;
   streak: number;
   bestStreak: number;
+  /** Problems answered wrong this round (used to suggest a Learn lesson). */
+  missed: Problem[];
+  /** A multiplication fact to offer on the results screen, if any. */
+  learnFact: { a: number; b: number } | null;
   endTime: number;
   raf: number | null;
   locked: boolean;
@@ -36,6 +40,8 @@ export const state: GameState = {
   wrong: 0,
   streak: 0,
   bestStreak: 0,
+  missed: [],
+  learnFact: null,
   endTime: 0,
   raf: null,
   locked: false,
@@ -50,6 +56,8 @@ export function resetRound(): void {
   state.wrong = 0;
   state.streak = 0;
   state.bestStreak = 0;
+  state.missed = [];
+  state.learnFact = null;
   state.input = '';
   state.locked = false;
   state.current = null;

@@ -79,8 +79,11 @@ $('howModal').addEventListener('click', (e) => {
   // close when the dark backdrop (not the card) is clicked
   if (e.target === e.currentTarget) closeHow();
 });
-$('learnBtn').addEventListener('click', openTutorial);
+$('learnBtn').addEventListener('click', () => openTutorial());
 $('tutQuit').addEventListener('click', goHome);
+$('resLearnBtn').addEventListener('click', () => {
+  if (state.learnFact) openTutorial(state.learnFact);
+});
 $('homeBtn').addEventListener('click', goHome);
 $('quitBtn').addEventListener('click', quitGame);
 $('soundBtn').addEventListener('click', toggleSound);
