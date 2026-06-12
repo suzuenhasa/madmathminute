@@ -184,22 +184,23 @@
     </div>
   </section>
 
-  <!-- ===================== TUTORIAL (Learn) ===================== -->
+  <!-- ===================== GUESS-O-TRON (Explore) ===================== -->
   <section id="tutorial" class="screen">
     <button class="iconbtn" id="tutQuit" aria-label="Back">✕</button>
-    <div class="tut-wrap">
-      <div class="tut-title">📚 Learn Multiplication</div>
-      <div class="tut-problem" id="tutProblem">13 × 4</div>
-      <div class="tut-presets" id="tutPresets"></div>
-      <div class="tut-methods" id="tutMethods">
-        <button class="tut-tab" data-method="groups">Groups</button>
-        <button class="tut-tab" data-method="array">Array</button>
-        <button class="tut-tab" data-method="area">Area model</button>
-        <button class="tut-tab" data-method="standard">Standard</button>
+    <div class="gt-wrap">
+      <div class="gt-title">🤖 Guess-O-Tron</div>
+      <div class="gt-hud">
+        <div class="gt-streak" id="gtStreak">🔥0</div>
+        <div class="gt-power" aria-hidden="true"><div class="gt-power-fill" id="gtPowerFill"></div></div>
       </div>
-      <div class="tut-stage" id="tutStage"></div>
+      <div class="gt-slot" id="gtSlot">
+        <span class="gt-problem" id="gtProblem">5 × 10</span>
+        <span class="gt-eq">=</span>
+        <span class="gt-tally" id="gtTally">?</span>
+      </div>
+      <div class="gt-stage" id="tutStage"></div>
       <p class="tut-caption" id="tutCaption"></p>
-      <div class="tut-controls" id="tutControls"></div>
+      <div class="gt-panel" id="gtPanel"></div>
     </div>
   </section>
 
